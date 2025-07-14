@@ -3,7 +3,7 @@ install:
 	@git submodule update
 	@if [ -f /etc/debian_version ]; then \
 		echo "Detected Debian/Ubuntu system. Installing dependencies..."; \
-		sudo apt install -y openjdk-21-jdk maven && \
+		sudo apt install -y jdk-21 maven && \
 		mvn clean install && \
 		curl -L https://github.com/watchexec/watchexec/releases/download/v2.3.2/watchexec-2.3.2-x86_64-unknown-linux-gnu.tar.xz -o /tmp/watchexec.tar.xz && \
 		cd /tmp && \
